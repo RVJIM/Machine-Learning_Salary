@@ -7,6 +7,7 @@ from tabulate import tabulate
 table = pd.read_excel("Ask A Manager Salary Survey 2021 (Responses).xlsx")
 df = pd.DataFrame(table)
 
+
 '''# Delete columns that we don't use
 df = df.drop([0, 4, 9, 11, 12], axis = 1)
 
