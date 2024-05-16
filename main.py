@@ -8,10 +8,10 @@ table = pd.read_excel("Ask A Manager Salary Survey 2021 (Responses).xlsx")
 df = pd.DataFrame(table)
 
 # Delete na values of last 3 columns
-df = df.dropna(subset=df.iloc[:, -3:].columns)
-df = df.dropna(subset=df.columns[2])
+df.dropna(subset=df.iloc[:, -3:].columns, inplace=True)
+df.dropna(subset=df.columns[2], inplace=True)
 df.iloc[:, 3] = df.iloc[:, 3].replace('na', np.nan)
-df = df.dropna(subset=df.columns[3])
+df.dropna(subset=df.columns[3], inplace=True)
 
 # Delete columns that we don't use
 columns_to_delete = [
@@ -21,7 +21,7 @@ columns_to_delete = [
                 'How many years of professional work experience do you have overall?'
                 ]
 
-df = df.drop(columns=columns_to_delete)
+df.drop(columns=columns_to_delete, inplace=True)
 
 # Change columns' name
 names_columns = ['Age', 'Industry', 'Job Title', 'Salary', 'Additional', 'Currency', 'Other Currency', 'Country', 'Years job',
@@ -29,7 +29,7 @@ names_columns = ['Age', 'Industry', 'Job Title', 'Salary', 'Additional', 'Curren
 df.columns = names_columns
 
 # Delete elements where the salary is equal to 0 
-df = df[df.iloc[:, 3] != 0]
+df = df[df.loc[:, 'Salary'] != 0]
 
 df['Country'] = df['Country'].str.strip()
 df['Other Currency'] = df['Other Currency'].str.strip()
@@ -72,9 +72,9 @@ uk = [
         'England, Gb', 'U.K. (northern England)', 'Isle of Man', 'UK for U.S. company'
         ]
 
-df['Country'] = df['Country'].replace(us, 'USA')
-df['Country'] = df['Country'].replace(canada, 'Canada')
-df['Country'] = df['Country'].replace(uk, 'United Kingdom')
+df['Country'].replace(us, 'USA', inplace=True)
+df['Country'].replace(canada, 'Canada', inplace=True)
+df['Country'].replace(uk, 'United Kingdom', inplace=True)
 
 errage = {
         'INDIA': 'India', 'Sri lanka': 'Sri Lanka', 'pakistan':'Pakistan', 'ARGENTINA BUT MY ORG IS IN THAILAND': 'Argentina',
@@ -94,7 +94,7 @@ errage = {
         'Jersey, Channel islands': 'Jersey', 'the netherlands': 'The Netherlands'
         }
 
-df['Country'] = df['Country'].replace(errage)
+df['Country'].replace(errage, inplace=True)
 
 countries = [
         'Afghanistan', 'Argentina', 'Australia', 'Austria', 'Bangladesh', 'Belgium', 'Bermuda', 'Bosnia and Herzegovina', 'Brazil',
@@ -130,29 +130,38 @@ currencies = {
         'Rupees': 'INR', 'Indian rupees': 'INR', 'KRW (Korean Won)': 'KRW', 'Korean Won': 'KRW'
 }
 
-df['Other Currency'] = df['Other Currency'].replace(currencies)
-df['Currency'] = df['Currency'].mask(df['Currency']=='Other', df['Other Currency'])
-df['Currency'] = df['Currency'].mask((df['Other Currency'].str.len() == 3) & (df['Other Currency']!= 'nan'), df['Other Currency'])
+df['Other Currency'].replace(currencies, inplace=True)
+df['Currency'].mask(df['Currency']=='Other', df['Other Currency'], inplace=True)
+df['Currency'].mask((df['Other Currency'].str.len() == 3) & (df['Other Currency']!= 'nan'), df['Other Currency'], inplace=True)
 df['Currency'] = df['Currency'].str.upper()
 
-df = df.drop(columns= 'Other Currency')
-elements_to_delete = ['NAN', 'N/A']
-df = df.drop(df[df['Currency'].isin(elements_to_delete)].index)
+df.drop(columns= 'Other Currency', inplace=True)
+elements_to_delete = ['NAN', 'N/A', 'EQUITY']
+df.drop(df[df['Currency'].isin(elements_to_delete)].index, inplace=True)
+
+df.loc[(df['Country'] == 'Australia') & (df['Currency'] == 'AUD/NZD'), 'Currency'] = 'AUD'
+df.loc[(df['Country'] == 'New Zealand') & (df['Currency'] == 'AUD/NZD'), 'Currency'] = 'NZD'
 
 # Sum of columns Salary and Additional
+df['Additional'].fillna(0, inplace=True) # otherwise, it creates a lot of blanks, because additional has them
 df['Salary'] = df['Salary'] + df['Additional']
-df = df.drop(columns='Additional')
+df.drop(columns='Additional', inplace=True)
 
 # Standardize the Salary in USD, every pair at 01/01/2024
 GBP = 1.2723
 EUR = 1.1044
 CAD = 0.6764
-TRY = 0.0
+TRY = 0.0338
+BRL = 0.2060
+PHP = 0.0180
+AUD = 0.6811
+NZD = 0.6324
+KWD = 3.2544
+NGN = 0.001135
+JPY = 0.0071
+SEK = 0.0995
+
 print(df['Currency'].unique())
 
-
-
-#df.to_excel('clean.xlsx')
-
-
+df.to_excel('clean.xlsx')
 
