@@ -7,17 +7,11 @@ from tabulate import tabulate
 table = pd.read_excel("Ask A Manager Salary Survey 2021 (Responses).xlsx")
 df = pd.DataFrame(table)
 
-<<<<<<< Updated upstream
-
-'''# Delete columns that we don't use
-df = df.drop([0, 4, 9, 11, 12], axis = 1)
-=======
 # Delete na values of last 3 columns
 df = df.dropna(subset=df.iloc[:, -3:].columns)
 df = df.dropna(subset=df.columns[2])
 df.iloc[:, 3] = df.iloc[:, 3].replace('na', np.nan)
 df = df.dropna(subset=df.columns[3])
->>>>>>> Stashed changes
 
 # Delete columns that we don't use
 columns_to_delete = ['Timestamp', 'If your job title needs additional context, please clarify here:',
