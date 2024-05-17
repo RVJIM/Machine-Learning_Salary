@@ -147,21 +147,29 @@ df['Additional'].fillna(0, inplace=True) # otherwise, it creates a lot of blanks
 df['Salary'] = df['Salary'] + df['Additional']
 df.drop(columns='Additional', inplace=True)
 
-# Standardize the Salary in USD, every pair at 01/01/2024
-GBP = 1.2723
-EUR = 1.1044
-CAD = 0.6764
-TRY = 0.0338
-BRL = 0.2060
-PHP = 0.0180
-AUD = 0.6811
-NZD = 0.6324
-KWD = 3.2544
-NGN = 0.001135
-JPY = 0.0071
-SEK = 0.0995
+# Standardize the Salary in USD, every pair at 31/12/2021 and drop Currency column
+pair_currencies = {
+        'GBP': 1.3529, 'EUR': 1.1368, 'CAD': 0.7915, 'TRY': 0.07507, 'BRL': 0.1795, 'BR$': 0.1795, 'PHP': 0.01961, 'AUD': 0.7262,
+        'NZD': 0.6828, 'KWD': 3.3102, 'NGN': 0.00243, 'JPY': 0.00869, 'SEK': 0.1106, 'ZAR': 0.0625, 'PKR': 0.00569, 'MYR': 0.24015,
+        'PLN': 0.2480, 'SGD': 0.7413, 'HRK': 0.000915, 'CHF': 1.0962, 'TTD': 0.1476, 'CNY': 0.1574, 'SAR': 0.2664, 'ILS': 0.3221,
+        'MXN': 0.0488, 'CZK': 0.0458, 'DKK': 0.1529, 'HKD': 0.1283, 'THB': 0.0301, 'INR': 0.0134, 'NOK': 0.1135, 'TWD': 0.0317,
+        'ARS': 0.00974, 'LKR': 0.00493, 'KRW': 0.000842, 'COP': 0.000246, 'IDR': 0.0000702
+}
 
-print(df['Currency'].unique())
+for i, row in df.iterrows():
+        currency = row['Currency']
+        if currency in pair_currencies:
+                df.at[i, 'Salary'] *= pair_currencies[currency]
+                df.at[i, 'Currency'] = 'USD'
+
+df.drop(columns='Currency', inplace=True)
+
+
+df['Job Title'] = df['Job Title'].str.strip().str.upper()
+df['Industry'] = df['Industry'].str.strip().str.upper()
+total_values = df['Industry'].value_counts().sort_index()
+#print(tabulate(total_values.reset_index().sort_values(by='Industry'), headers=['Industry', 'Count'], tablefmt='pretty'))
+total_values.to_excel('Industry.xlsx')
 
 df.to_excel('clean.xlsx')
 
