@@ -164,12 +164,17 @@ for i, row in df.iterrows():
 
 df.drop(columns='Currency', inplace=True)
 
+df = df[df['Race'] != 'Another option not listed here or prefer not to answer']  
+df = df[(df['Gender'] != 'Other or prefer not to answer') & (df['Gender'] != 'Non-binary')]
 
 df['Job Title'] = df['Job Title'].str.strip().str.upper()
+
 df['Industry'] = df['Industry'].str.strip().str.upper()
-total_values = df['Industry'].value_counts().sort_index()
-#print(tabulate(total_values.reset_index().sort_values(by='Industry'), headers=['Industry', 'Count'], tablefmt='pretty'))
-total_values.to_excel('Industry.xlsx')
+total_values_industry = df['Industry'].value_counts().sort_index()
+total_values_industry.to_excel('Industry.xlsx')
+
+total_values_job = df['Job Title'].value_counts().sort_index()
+total_values_job.to_excel('Job_Title.xlsx')
 
 df.to_excel('clean.xlsx')
 
