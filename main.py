@@ -168,13 +168,20 @@ df = df[df['Race'] != 'Another option not listed here or prefer not to answer']
 df = df[(df['Gender'] != 'Other or prefer not to answer') & (df['Gender'] != 'Non-binary')]
 
 df['Job Title'] = df['Job Title'].str.strip().str.upper()
-
 df['Industry'] = df['Industry'].str.strip().str.upper()
-total_values_industry = df['Industry'].value_counts().sort_index()
-total_values_industry.to_excel('Industry.xlsx')
 
-total_values_job = df['Job Title'].value_counts().sort_index()
-total_values_job.to_excel('Job_Title.xlsx')
+
+threshold = 100
+
+total_values_industry = df['Industry'].value_counts()
+#total_values_industry.to_excel('Industry.xlsx')
+df['Industry'] = np.where(df['Industry'].isin(total_values_industry[total_values_industry < threshold].index), 'OTHERS', df['Industry'])
+print(df['Industry'].value_counts())
+
+total_values_job = df['Job Title'].value_counts()
+#total_values_job.to_excel('Job_Title.xlsx')
+df['Job Title'] = np.where(df['Job Title'].isin(total_values_job[total_values_job < threshold].index), 'OTHERS', df['Job Title'])
+print(df['Job Title'].value_counts())
 
 df.to_excel('clean.xlsx')
 
