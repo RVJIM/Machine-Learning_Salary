@@ -3,6 +3,10 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 from tabulate import tabulate
+import string
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.stem import PorterStemmer
 
 table = pd.read_excel("Ask A Manager Salary Survey 2021 (Responses).xlsx")
 df = pd.DataFrame(table)
@@ -25,7 +29,7 @@ df.drop(columns=columns_to_delete, inplace=True)
 
 # Change columns' name
 names_columns = ['Age', 'Industry', 'Job Title', 'Salary', 'Additional', 'Currency', 'Other Currency', 'Country', 'Years job',
-                 'Highest education', 'Gender', 'Race']
+                 'Highest Education', 'Gender', 'Race']
 df.columns = names_columns
 
 # Delete elements where the salary is equal to 0 
@@ -76,6 +80,7 @@ df['Country'].replace(us, 'USA', inplace=True)
 df['Country'].replace(canada, 'Canada', inplace=True)
 df['Country'].replace(uk, 'United Kingdom', inplace=True)
 
+# Filter by other countries
 errage = {
         'INDIA': 'India', 'Sri lanka': 'Sri Lanka', 'pakistan':'Pakistan', 'ARGENTINA BUT MY ORG IS IN THAILAND': 'Argentina',
         'United States- Puerto Rico': 'Puerto Rico', 'México':'Mexico', 'Brasil': 'Brazil', 'NZ': 'New Zealand',
@@ -174,14 +179,45 @@ df['Industry'] = df['Industry'].str.strip().str.upper()
 threshold = 100
 
 total_values_industry = df['Industry'].value_counts()
-#total_values_industry.to_excel('Industry.xlsx')
+
 df['Industry'] = np.where(df['Industry'].isin(total_values_industry[total_values_industry < threshold].index), 'OTHERS', df['Industry'])
-print(df['Industry'].value_counts())
+#print(df['Industry'].value_counts())
 
 total_values_job = df['Job Title'].value_counts()
-#total_values_job.to_excel('Job_Title.xlsx')
-df['Job Title'] = np.where(df['Job Title'].isin(total_values_job[total_values_job < threshold].index), 'OTHERS', df['Job Title'])
-print(df['Job Title'].value_counts())
 
-df.to_excel('clean.xlsx')
+#df['Job Title'] = np.where(df['Job Title'].isin(total_values_job[total_values_job < threshold].index), 'OTHERS', df['Job Title'])
+#print(df['Job Title'].value_counts())
 
+#
+np.set_printoptions(threshold=np.inf)
+
+job_titles = df['Job Title'].astype(str).apply(lambda x: x.translate(str.maketrans('', '', string.punctuation))).sort_values()
+
+# tokenization & stemming
+nltk.download('punkt')
+nltk.download('wordnet')
+
+stemmer = PorterStemmer()
+
+def tokenize_and_stem(text):
+    tokens = word_tokenize(text.lower())  
+    stems = [stemmer.stem(token) for token in tokens]  
+    return ' '.join(stems)
+
+stemmed_job_titles = job_titles.apply(tokenize_and_stem).str.upper()
+
+data2 = pd.read_excel('clean.xlsx')
+data2['Job Title'] = stemmed_job_titles
+data2.dropna(subset='Job Title', inplace=True)
+#data2.to_excel('clean.xlsx', index=False)
+
+# 
+data3 = pd.get_dummies(data2, columns=['Country', 'Industry', 'Job Title', 'Gender', 'Race', 'Age', 'Years job'], drop_first=True, dtype=int)
+
+data3.drop(columns= 'Unnamed: 0', inplace=True)
+print(data3.columns)
+print(data3.head())
+
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression, LinearRegression
+from sklearn.metrics import accuracy_score
