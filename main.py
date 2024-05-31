@@ -1,12 +1,14 @@
 import pandas as pd
 import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
-from tabulate import tabulate
-import string
-import nltk
-from nltk.tokenize import word_tokenize
-from nltk.stem import PorterStemmer
+import time, math
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler, OrdinalEncoder, OneHotEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import Ridge, Lasso, LinearRegression
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+from sklearn.tree import DecisionTreeRegressor, plot_tree
+
 
 table = pd.read_excel("Ask A Manager Salary Survey 2021 (Responses).xlsx")
 df = pd.DataFrame(table)
@@ -80,7 +82,6 @@ df['Country'].replace(us, 'USA', inplace=True)
 df['Country'].replace(canada, 'Canada', inplace=True)
 df['Country'].replace(uk, 'United Kingdom', inplace=True)
 
-# Filter by other countries
 errage = {
         'INDIA': 'India', 'Sri lanka': 'Sri Lanka', 'pakistan':'Pakistan', 'ARGENTINA BUT MY ORG IS IN THAILAND': 'Argentina',
         'United States- Puerto Rico': 'Puerto Rico', 'México':'Mexico', 'Brasil': 'Brazil', 'NZ': 'New Zealand',
@@ -114,9 +115,6 @@ countries = [
 ]
 
 df = df[df['Country'].isin(countries)]
-
-#total_values = df['Country'].value_counts()
-#print(tabulate(total_values.reset_index().sort_values(by='Country'), headers=['Country', 'Count'], tablefmt='pretty'))
 
 # Shift value from Other Currency to Currency, delete the first and make Currency's values in Upper
 df['Currency'] = df['Currency'].astype(str)
@@ -169,55 +167,156 @@ for i, row in df.iterrows():
 
 df.drop(columns='Currency', inplace=True)
 
+# Remove few values not useful for our research
 df = df[df['Race'] != 'Another option not listed here or prefer not to answer']  
 df = df[(df['Gender'] != 'Other or prefer not to answer') & (df['Gender'] != 'Non-binary')]
 
-df['Job Title'] = df['Job Title'].str.strip().str.upper()
-df['Industry'] = df['Industry'].str.strip().str.upper()
-
-
+# Set threshold we use on Industry and Job Title columns to reduce elements 
 threshold = 100
 
+df['Industry'] = df['Industry'].str.strip().str.upper()
 total_values_industry = df['Industry'].value_counts()
-
 df['Industry'] = np.where(df['Industry'].isin(total_values_industry[total_values_industry < threshold].index), 'OTHERS', df['Industry'])
-#print(df['Industry'].value_counts())
 
+df['Job Title'] = df['Job Title'].str.strip().str.upper()
 total_values_job = df['Job Title'].value_counts()
+df['Job Title'] = np.where(df['Job Title'].isin(total_values_job[total_values_job < threshold].index), 'OTHERS', df['Job Title'])
 
-#df['Job Title'] = np.where(df['Job Title'].isin(total_values_job[total_values_job < threshold].index), 'OTHERS', df['Job Title'])
-#print(df['Job Title'].value_counts())
 
-#
-np.set_printoptions(threshold=np.inf)
+df.to_excel('clean.xlsx')
 
-job_titles = df['Job Title'].astype(str).apply(lambda x: x.translate(str.maketrans('', '', string.punctuation))).sort_values()
+# Standardize salary and make it the split
+X = df.drop(['Salary'], axis=1)
+df["Standard_sal"] = StandardScaler().fit_transform(df[['Salary']])
+y = df['Standard_sal']
 
-# tokenization & stemming
-nltk.download('punkt')
-nltk.download('wordnet')
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.8, random_state=123)
+y.to_excel('Salary_standardize.xlsx')
 
-stemmer = PorterStemmer()
+# Preprocessing of all columns
+preprocessing_country = ColumnTransformer(
+    transformers=[
+        ('ord', OrdinalEncoder(), ['Years job', 'Age', 'Highest Education']),
+        ('encoder', OneHotEncoder(handle_unknown='ignore'), ['Country', 'Industry', 'Job Title', 'Race'])
+    ]
+)
 
-def tokenize_and_stem(text):
-    tokens = word_tokenize(text.lower())  
-    stems = [stemmer.stem(token) for token in tokens]  
-    return ' '.join(stems)
+X_train_transformed = preprocessing_country.fit_transform(X_train)
+X_test_transformed = preprocessing_country.transform(X_test)
 
-stemmed_job_titles = job_titles.apply(tokenize_and_stem).str.upper()
 
-data2 = pd.read_excel('clean.xlsx')
-data2['Job Title'] = stemmed_job_titles
-data2.dropna(subset='Job Title', inplace=True)
-#data2.to_excel('clean.xlsx', index=False)
+# Function of models
+def models(X_train, X_test, y_train, y_test, name_decision_tree):
+    models = {
+        'Linear Regression': LinearRegression(),
+        'Ridge': Ridge(),
+        'Lasso': Lasso(),
+        'RandomForestRegressor': RandomForestRegressor(),
+        'DecisionTreeRegressor': DecisionTreeRegressor(),
+        'GradientBoostingRegressor' : GradientBoostingRegressor()
+    }
 
-# 
-data3 = pd.get_dummies(data2, columns=['Country', 'Industry', 'Job Title', 'Gender', 'Race', 'Age', 'Years job'], drop_first=True, dtype=int)
+    columns = ['Model', 'Run Time (minutes)', 'MSE', 'MAE', 'R2']
+    df_models = pd.DataFrame(columns=columns)
 
-data3.drop(columns= 'Unnamed: 0', inplace=True)
-print(data3.columns)
-print(data3.head())
+    for model_name, model in models.items():
+        start_time = time.time()
+        
+        model.fit(X_train, y_train)
+        y_train_pred = model.predict(X_train)
+        #y_test_pred = model.predict(X_test)
 
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression, LinearRegression
-from sklearn.metrics import accuracy_score
+        train_mse = math.sqrt(mean_squared_error(y_train, y_train_pred))
+        #test_mse = mean_squared_error(y_test, y_test_pred)
+
+        train_mae = mean_absolute_error(y_train, y_train_pred)
+        #test_mae = mean_absolute_error(y_test, y_test_pred)
+
+        r_squared_train = r2_score(y_train, y_train_pred)
+        #r_squared_test = r2_score(y_test, y_test_pred)
+
+        row = {'Model': model_name,
+           'Run Time (minutes)': round((time.time() - start_time) / 60, 6),
+           'MAE': train_mae,
+           'MSE': train_mse,
+           'R2': r_squared_train
+           }
+
+        df_models = pd.concat([df_models, pd.DataFrame([row])], ignore_index=True)
+       
+        if model_name == 'DecisionTreeRegressor':
+            a = plot_tree(model, filled=True, feature_names=X_train.columns if hasattr(X_train, 'columns') else None, rounded=True, max_depth=1)
+            #plt.savefig("decision_tree.png") 
+            #plt.show() 
+
+    return a, df_models
+
+
+ax, df_models_main = models(X_train_transformed, X_test_transformed, y_train, y_test, 'Main')
+
+
+# Divide the code in categories on the salary
+high_sal = ['Luxembourg', 'Ireland', 'Singapore', 'Qatar', 'United Arab Emirates', 'Switzerland', 'USA', 'Norway', 'Denmark', 'The Netherlands', 'Iceland']
+mid_sal = ['Saudi Arabia', 'Austria', 'Sweden', 'Belgium', 'Germany', 'Australia', 'Finland', 'Canada', 'France', 'South Korea', 'UK', 'Italy', 'Israel', 'Japan',
+            'New Zealand', 'Slovenia', 'Kuwait', 'Spain']
+low_sal = ['Lithuania', 'Czech Republic', 'Poland', 'Portugal', 'Bahamas', 'Croatia', 'Hungary', 'Estonia', 'Panama', 'Slovakia', 'Turkey', 'Puerto Rico', 'Romania',
+            'Seychelles', 'Latvia', 'Greece']
+
+def categories(x):
+    if x in high_sal: return 'High'
+    elif x in mid_sal: return 'Medium'
+    elif x in low_sal: return 'Low'
+    else: return 'Poverty'
+
+df['Category'] = df['Country'].apply(categories)
+print(df['Category'].value_counts())
+
+# Preprocessing on the DataFrame with categories
+X = df.drop(['Salary'], axis=1)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.8, random_state=123)
+
+preprocessing = ColumnTransformer(
+    transformers=[
+        ('ord', OrdinalEncoder(), ['Years job', 'Age', 'Highest Education']),
+        ('encoder', OneHotEncoder(handle_unknown='ignore'), ['Category', 'Industry', 'Job Title', 'Race'])
+    ]
+)
+
+X_train_transformed = preprocessing.fit_transform(X_train)
+X_test_transformed = preprocessing.transform(X_test)
+
+b, df_models_transformed = models(X_train_transformed, X_test_transformed, y_train, y_test, 'Category')
+
+# Function to analyse each category
+def analysis_categories(df, category: str):
+    df_category = df[df['Category'] == category]
+    X = df_category.drop(['Salary'], axis=1)
+    y = df_category['Standard_sal']
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.8, random_state=5)
+    X_train_transformed = preprocessing_country.fit_transform(X_train)
+    X_test_transformed = preprocessing_country.transform(X_test)
+
+    plot, df_models = models(X_train_transformed, X_test_transformed, y_train, y_test, category)
+
+    return plot, df_models
+
+# Function to compare between subsets
+def compare_subsets(df, categories):
+    all_results = []
+    plots = []
+    for category in categories:
+        print(f"Analyzing category: {category}")
+        plot, results = analysis_categories(df, category)
+        all_results.append(results)
+        plots.append(plot)
+    
+    df_results = pd.concat(all_results, ignore_index=True)
+    return plots, df_results
+
+categories = df['Category'].unique()
+plots, df_results = compare_subsets(df, categories)
+
+print(plots)
+print(df_results.drop(columns='Run Time (minutes)'))
