@@ -1,408 +1,53 @@
 Cluster 0:
-Office Associate
-Office Manager 
-Assistent Front Office Manager
-Office administrator 
-Box office & Admin manager
-Office Manager
-Office Manager
-Office Manager 
-Front Office Assistant
-Office & Finance Assistant
-Front and Back Office Manager
-Office Associate Senior
-Office Manager 
-Office Coordinator
-Office Assistant
-Office Assistant
-Office manager
-PA to CEO/Office Manager
-Remote Office Assistant
-Office Manager
+Software Developer
+iOS Developer
+Java Software Developer
+SCADA developer
+Junior Developer
+Email developer
+Graduate software developer
+Junior Developer 
+Software Developer
+Software Developer
+WordPress Developer
+Junior Software Developer
+Commercial Developer
+Frontend Web Developer
+Sr developer
+Software Developer
+Web Developer
+front end developer
+Senior Software Developer
+Lead Software Developer
 
 Cluster 1:
-Games Specialist
-Content Specialist
-Content Specialist
-Accounts Payable Specialist
-specialist
-Made to Measure Specialist
-PR Specialist
-Tax Specialist 
-Commercial Events Specialist 
-Sea Logistics specialist 
-Library metadata specialist
-Metadata Specialist
-Testing Specialist
-Web & Content Specialist
-Financial Aid Specialist 
-Payroll and Data Specialist
-Library specialist
-Logistics Specialist
-Customs Specialist
-Economic Self Sufficiency Specialist 
-
-Cluster 2:
-College Senior
-Senior Softwaare Engineer (Web)
-Senior illustrator 
-Senior Tech
-Senior technician
-Payroll Senior
-Senior Researcher
-Senior Admin
-Senior Administrator 
-Senior Library Assisstant
-Tax Senior
-Senior Library Clerk
-Senior Researcher
-Senior Test Engineer
-Senior Archivist
-Senior Copywriter
-Accounts Senior
-Senior Fitter
-Senior Reporter
-Senior Policy Adviser
-
-Cluster 3:
-Digital Media Coordinator
-VM BACKOFFICE COORDINATOR
-Project Coordinator/Communications Assistant
-Community centre coordinator
-Patient and service coordinator 
-Artist Coordinator
-Client Engagement Coordinator
-Intake coordinator
-Programs coordinator
-Customer Order Coordinator
-Knowledge and Information Coordinator
-QA Coordinator
-Registration coordinator
-Medical Coordinator
-Scanning Coordinator
-Staffing Coordinator
-Campaigns and policy coordinator 
-Pricing coordinator
-Pro Bono Coordinator
-Program coordinator 
-
-Cluster 4:
-Director of Prevention and Early Intervention Services
-patient services associate
-Customer services coordinator
-Visitor Services Assistant Manager
-Patron Services Associate
-University services associate
-Patron Services Staff
-Adult Services Librarian
-Youth Services Associate
-Family Support Services 2
-Services Manager
-Client Services Representative
-Adult Services Librarian
-Adult Services 
-Reader Services Librarian
-Library Services Representative II
-Visitor Services Coordinator/ Collections Manager
-Adult Services Librarian
-Manager, Guest Services and Operations
-Tenant Services Coordinator
-
-Cluster 5:
-Security Analyst
-Analyst
-Senior Research Analyst
-Analyst
-Senior Analyst, Management Consulting
-Analyst
-Senior Data Analyst
-Actuarial analyst
-Energy analyst
-Client Data Analyst
-Data Analyst
-Apprentice Technical Systems Analyst
-Analyst
-junior analyst
-Data Analyst
-Search Analyst
-Data analyst
-Fraud Analyst
-Spatial Data Analyst
-Analyst
-
-Cluster 6:
-Marketing Coordinator
-Senior Marketing Manager
-Marketing
-Marketing Automation Analyst
-Growth Marketing Manager
-Marketing assistant
-Digital Marketing Assistant
-Digital marketing Manager 
-digital marketing executive 
-Digital Marketing Assistant
-Marketing Assistant
-Marketing Coordinator
-Marketing Content Expert
-Lifecycle marketing manager
-Junior Digital Marketing Manager
-Communications and Marketing Assistant
-Senior Marketing Executive 
-Marketing Manager 
-Marketing Manager
-Marketing Manager
-
-Cluster 7:
-Engineering Coordinator
-Software Engineering Intern
-Engineering Student Trainee
-Quality Engineering Technician
-PhD student (engineering)
-Development Engineering Technician
-Engineering Intern
-Chief engineering
-Engineering Manager
-Platform engineering manager
-Engineering Manager
-Engineering Associate II
-Engineering Information Technologist
-Engineering Team Lead
-Senior Engineering Technician 
-Engineering forester
-Software engineering manager
-Engineering Manager
-Software engineering team lead
-Senior Engineering Technician
-
-Cluster 8:
-Chief Data Scientist
-Senior Data Scientist
-Chief Data Scientist
-Data scientist
-Computer Scientist
-Data Scientist
-Data Scientist
-Development scientist
-Junior Data Scientist
-Junior Data Scientist
-Biomedical Scientist
-Data Scientist
-Molecular Scientist
-Research scientist
-Environmental scientist
-senior scientist
-Environmental Scientist 
-Environmental Field Scientist
-Processing scientist
-Beamline Scientist
-
-Cluster 9:
-Government Relations Director
-Art Director
 Freelance Art Director
 Director
 Assistant Director
 Director
+Senior Director, Sales
 Arts Education Director
 Museum Director
 Director of Studies
-Director of admissions
 Library Director
-Food Service Director
 Centre Director
 Editorial Director
-Assistant Director-Residence Life
 Regional Director
+outreach director
 Development and communication director 
+Administrative Director
 Resident Director
 PA to director 
 Director of Community Programs 
+Director
+Executive Director
 
-Cluster 10:
-Territory Manager
-accreditation manager
-Store Manager 
-Data Manager 
-Regional Manager
-CRM manager 
-Manager
-General manager
-Property Manager
-Clinical Evaluation Manager
-Proposal manager
-Restaurant manager
-Talent Development Manager
-supply chain manager
-Assistant Manager
-Assistant Manager
-Team manager 
-manager
-Administration Manager 
-Assistant Manager
-
-Cluster 11:
-Library customer advisor
-Customer solutions advisor 
-Customer advisor
-Debt advisor
-Beauty advisor
-Junior Advocacy Advisor
-Sales Advisor
-Financial Advisor
-HR Analyst/Advisor
-Customer Care Advisor
-Personnel Advisor 
-Resource advisor/officer
-Best Buy Sales Advisor
-Policy Advisor
-Student Success Center Speciaist-Advisor
-Strategy Finance Advisor
-Student Advisor
-Recruitment Advisor
-Service advisor
-HR Advisor
-
-Cluster 12:
-Production editor 
-CMS Production Artist
-production worker 
-Production assistant
-Production engineer
-Production Manager
-Production Coordinator
-Post Production Assistant
-Production Editor
-Production Fabricator ff
-Print Production Assistant
-Production Manager
-Production and Workflow Manager
-Assistant Production Editor
-Editorial, Design, and Production Coordinator
-Production Assistant
-Production Assistant
-Assistant Production Editor
-PA to Partner and Production Editor
-Production designer 
-
-Cluster 13:
-"mum" ;)
-Househusband
-Founder
-Unemployed 
-Realtor
-Student
-Homemaker 
-data science student
-nan
-Intern
-Student 
-Software Development Lead
-sdsd
-mn jj
-Programmer
-occupational therapist
-FP&A
-FP&A
-Scribe
-chief executive official
-
-Cluster 14:
-Education and Outreach Coordinator
-Outreach worker
-Asst. Curator & Outreach Coordinator
-Outreach Coordinator
-outreach director
-Outreach professional
-Youth Services Outreach Assistant
-Outreach Educator 
-Outreach Coordinator
-Outreach Librarian
-Homeless Outreach Worker
-Education Outreach Manager
-Crisis Resource and Outreach Navigator
-Outreach and DIgital Resources Librarian
-Outreach and Education Coordinator
-Student Outreach Specialist
-Outreach Coordinator
-Community Outreach Coordinator
-Outreach
-Outreach Manager
-
-Cluster 15:
-Community Project Manager
-project manager
-Project Manager 
-Project Manager
-Project Manager
-Project Manager
-Project Manager
-Project Manager
-Project Manager 
-Project Manager
-Project Manager
-Project Manager 
-Project Manager
-Project Coordinator
-Project manager 
-Editor and producer / Project manager
-Assistant Project Manager
-Project Manager
-Project manager
-Project Leader
-
-Cluster 16:
-Student teacher
-Special Education Teacher
-Teacher
-hobby teacher
-Substitute teacher
-Teacher
-Mathematics Teacher
-Social Studies and Technology Teacher
-English as a Second Language Teacher
-Substitute Teacher
-Teacher Assistant
-Primary Teacher
-Teacher Resident/Student Teacher
-Native English Teacher
-Substitute teacher
-Teacher
-Preschool teacher
-Primary Teacher
-Substitute teacher
-Preschool teacher
-
-Cluster 17:
-Narrative Designer
-marketing designer
-Textile Designer
-User Experience Designer Apprentice
-RPG Designer
-Visual designer
-Graphic Designer
-Travel designer
-Floral designer
-graphic designer
-Senior Designer
-Graphic Designer
-Graphic Designer/Desktop Publisher
-Graphic Designer
-Graphic Designer and Project Coordinator
-Associate Learning Designer
-Graphic Designer
-Assistant Fashion Designer
-Junior Interior Designer
-UX designer
-
-Cluster 18:
+Cluster 2:
 Software Engineer
 Software Engineer
-software engineer
-Engineer
 Senior Software Engineer
 Graduate Software Engineer
 Software Engineer 
-Engineer
 Junior Software Engineer
 Software engineer
 Software Engineer
@@ -415,96 +60,231 @@ Research Software Engineer
 Software Engineer
 Software Engineer
 Software engineer
+Software engineer
+Software Engineer
+Senior Software Engineer 
 
-Cluster 19:
-Customer service manager 
-Web Customer Service Rep. 
-Customer Service/Tech Support Agent
-Customer service specialist 2
-Customer Service Advisor
-Customer Service Rep
-Customer Service Associate
-Customer Service Manager
-Customer Service Team Member
-Customer Service Rep
-Customer Service Representative 
-Customer Service Rep, entry level
-Customer Service Rep
-Customer Service
-Customer Service
-Remote Manager/Online Customer Service
-Lead customer service associate 
-Customer Service Specialist
-Customer Service Associate
-Customer service rep 
-
-Cluster 20:
-Software Developer
-iOS Developer
-Java Software Developer
-SCADA developer
-Junior Developer
-Email developer
-Junior Software Developer
-Graduate software developer
-Junior Developer 
-Software Developer
-Software Developer
-WordPress Developer
-Junior Software Developer
-Commercial Developer
-Digital Skills Developer 
-Frontend Web Developer
-Sr developer
-Software Developer
-Web Developer
-front end developer
-
-Cluster 21:
-Vice President, Analytics
-President
-Vice President
-Vice President
-Assistant to the President
-Assistant Vice President 
-Vice President
-Vice president
-Vice President of Operations
-Assistant Vice President - Operations Supervisor
-Vice President
+Cluster 3:
+Asst. Manager
+Asst. Curator & Outreach Coordinator
+Admin Asst/Tech Writer
+asst digital editor and producer
+Admin Asst to VP and Development
+Asst Librarian
+Admin Asst
+Operations Asst
+Payroll and Accounts Payable Asst
+Asst. Program Director & Volunteer Coordinator
+Tech. Admin Asst./Office Coordinator
+Logistics Asst
+Admin Asst
+Asst. Office Manager
+Asst Manager
+Administrative Asst. 
+Asst Professor
+Executive Assistant/Admin Asst 3
 Asst Vice President/ loan officer 
-Vice President
-Vice President
-Vice President
-Vice President of Programs
-Executive Assistant to the Vice President for Finance and Administration
-Vice President
-Vice President, Market Researcg
-Vice President of Administration
+Asst. social media manager
 
-Cluster 22:
-Program director
-Volunteer and Partnerships Program Manager
-After School Program Leader
-Program Director
-Program Manager
-Program Assistant
-Communications & Program Administration Manager
-Program Specialist
-Senior Program Manager
-Program Assistant
-Program manager
-Program Director 
-Program Technician
-Program Manager
-Program Leader
-Program assistant 
-Program Associate 
-Program Associate
-Program Analyst
-Program Assistant 
+Cluster 4:
+Operations Manager
+Operations Manager
+Operations Intern
+Operations Assistant
+Operations Management Graduate
+[radio] Operations Assistant
+Operations Assistant
+Director of Operations
+Operations Manager
+Operations Program Associate
+Admissions Operations Assistant
+Manager of Facility Management Operations
+Estates Operations Manager
+Manager, Guest Services and Operations
+Manager of Inside Operations
+Operations Assistant 
+Operations manager
+Operations Analyst 
+Operations Assistant
+Director of Operations
 
-Cluster 23:
+Cluster 5:
+Special Education Teacher
+Teacher
+hobby teacher
+Substitute teacher
+Mathematics Teacher
+English as a Second Language Teacher
+Substitute Teacher
+Teacher Assistant
+Primary Teacher
+Teacher Resident/Student Teacher
+Native English Teacher
+Substitute teacher
+Teacher
+Preschool teacher
+Primary Teacher
+Substitute teacher
+Preschool teacher
+Teacher
+Pre-School teacher
+Lead Teacher
+
+Cluster 6:
+Marketing Coordinator
+Senior Marketing Manager
+Marketing
+Growth Marketing Manager
+Marketing assistant
+Marketing Assistant
+Marketing Coordinator
+Marketing Content Expert
+Marketing Executive
+Lifecycle marketing manager
+Marketing and communications officer
+Marketing Executive
+Communications and Marketing Assistant
+Senior Marketing Executive 
+Marketing Manager 
+Sales Associate/Marketing Coordinator
+Marketing Manager
+Marketing Manager
+Marketing coordinator
+Marketing Coordinator 
+
+Cluster 7:
+Software Engineer Technical Support
+Technical Assistant
+Senior Technical Sales Consultant
+Technical Support Specialist I
+Apprentice Technical Systems Analyst
+CAD Technical Lead
+Technical Analyst
+Library Technical Assistant II
+Technical Consultant
+Technical specialist 
+Technical Support
+Technical support agent
+Technical Operations Manager
+Technical specialist
+Technical Support 
+Technical Support Rep
+Technical Solutions Manager
+Technical Support Executive
+Technical Director / CTO
+Technical Support Specialist
+
+Cluster 8:
+Academic Librarian
+Music Librarian
+Librarian
+Reference Librarian
+Assistant librarian
+Assistant Librarian
+Librarian
+Assistant librarian
+Adult Services Librarian
+Reader Services Librarian
+Librarian
+director/librarian
+Librarian 
+Adult Services Librarian
+Collections librarian
+Librarian 
+Librarian
+Senior Information Librarian
+Librarian
+Assistant Orchestra Librarian
+
+Cluster 9:
+occupational therapist
+Compliance & Risk Officer
+FP&A
+FP&A
+Scribe
+Chief Fiscal Officer
+Talent Acquisition Partner
+homie
+Infection Prevention Associate 
+Strategic Buyer
+Facilitator 
+Director of Prevention and Early Intervention Services
+CTO
+Regional
+masters student
+Online Tutor
+Private Tutor
+Soldier
+Registration and enrollment of Childcare Programs/Employees
+Sales Development Representative 
+
+Cluster 10:
+Assistant Registrar
+Personal Executive Assistant 
+Administrative Assistant
+Resident's Assistant
+Graduate Assistant
+Administrative assistant
+Assistant
+Assistant 
+Administrative assistant (part time)
+Graduate Teaching Assistant
+Administrative Assistant
+care assistant 
+Recruiting Assistant
+Assistant Manager
+Assistant Manager
+Special Events Assistant 
+Library assistant
+Catering Assistant
+HR Assistant
+Care assistant 
+
+Cluster 11:
+Associate Attorney
+Associate Attorney
+Staff Attorney
+Attorney
+Program Manager & Staff Attorney
+Document Review Attorney 
+Document Review Attorney 
+Staff attorney - nonprofit 
+Staff Attorney III
+Staff attorney
+Staff Attorney 
+Staff Attorney
+Immigration attorney
+Deputy Attorney General
+Associate Attorney
+Attorney
+Assistant District Attorney
+Staff Attorney
+Associate Attorney
+Associate Attorney
+
+Cluster 12:
+Games Specialist
+Content Specialist
+Content Specialist
+Accounts Payable Specialist
+specialist
+Made to Measure Specialist
+PR Specialist
+Tax Specialist 
+Commercial Events Specialist 
+Quality And Compliance Specialist
+Sea Logistics specialist 
+Library metadata specialist
+Metadata Specialist
+Testing Specialist
+Web & Content Specialist
+Specialist Support Worker
+Financial Aid Specialist 
+Payroll and Data Specialist
+Library specialist
+HR/Payroll Specialist
+
+Cluster 13:
 Assistant Professor
 Adjunct Professor
 Associate professor (tenured)
@@ -517,7 +297,6 @@ Associate Professor
 Assistant Professor 
 Assistant Professor of Education
 Assistant Professor of English
-Assistant Professor (Tenure-Track)
 Assistant Professor
 Adjunct Professor
 Associate Professor
@@ -525,52 +304,405 @@ Assistant Professor
 Assistant Professor, tenure-track
 Adjunct Professor 
 Assistant professor 
+Assistant Professor
+
+Cluster 14:
+Software Development Lead
+Quality Assurance Lead
+Associate Team Lead - Revenue Cycle
+Residence Academic Lead 
+Team lead dmv
+Administrative Team Lead
+Continuous Improvement Lead
+Inventory lead/floor lead
+Shift lead 
+Lead Information Analyst
+Retail Communications Lead
+Restaurant shift lead
+Communications Lead (hospital)
+Lead Organizer
+Team Lead
+Sales Lead
+Senior Knowledge and Evidence Lead
+Client Billing Specialist Team Lead
+Billing Team Lead
+Operations Lead
+
+Cluster 15:
+Head of Business Support 
+Business support assistant
+Business Administration Assistant 
+Business Management Support
+Business manager
+HR business partner 
+HR & Payroll Business Partner
+Business Support
+Business analyst
+Business Intelligence Analyst
+Business Analyst
+Business Development Manager
+Business Support officer
+Business Development Specialist 
+Business Development Manager
+Business Analyst 
+Business Manager
+New Business
+Business Support Associate
+Business Operations Analyst
+
+Cluster 16:
+Finance Assistant
+Finance Assistant
+Data Finance Administrator 
+Finance Officer
+Finance process Expert
+Finance Assistant
+Finance Assistant
+Office & Finance Assistant
+Corporate Finance Associate
+Head of finance
+Finance Graduate
+Strategy Finance Advisor
+Finance/Administrative Assistant
+Finance Assistant 
+Finance Manager
+Finance Temp
+Finance Analyst
+Finance assistant
+Associate, Client Finance
+Finance and Administration Manager
+
+Cluster 17:
+Security Analyst
+Analyst
+Senior Analyst, Management Consulting
+Analyst
+Actuarial analyst
+Energy analyst
+Analyst
+Search Analyst
+Analyst
+Senior analyst
+Content Analyst
+Conflicts Analyst
+Information Analyst
+Sustainability and Energy Analyst
+Risk Analyst
+Test Analyst
+Cyber Security Analyst
+Actuarial analyst
+System Support Analyst
+Senior Analyst
+
+Cluster 18:
+VM BACKOFFICE COORDINATOR
+Administrative coordinator 
+Education and Outreach Coordinator
+Project Coordinator/Communications Assistant
+Community centre coordinator
+Customer services coordinator
+Artist Coordinator
+Client Engagement Coordinator
+Intake coordinator
+Programs coordinator
+Knowledge and Information Coordinator
+QA Coordinator
+Registration coordinator
+HR Coordinator 
+Operations & Events Coordinator
+Medical Coordinator
+Scanning Coordinator
+Staffing Coordinator
+Campaigns and policy coordinator 
+Sales coordinator 
+
+Cluster 19:
+Senior Research Analyst
+Graduate Research Assitant
+PhD student/research assistant
+Research Assisstant 
+Graduate Research Assistant
+Research Executive
+Graduate Research Assitant
+Graduate research assistant 
+Senior Research Executive
+Graduate Research Assistant
+Research Associate 
+Graduate Research Assistant
+Graduate research assistant
+Research Assistant I
+Research Integrity Officer
+Research Assistant
+Research Intern
+Research portfolio manager
+Graduate research assistant
+Graduate Research Assistant
+
+Cluster 20:
+Technology Associate
+Social Studies and Technology Teacher
+Apple Technology Specialist
+Coordinator of Instructional Technology
+Assistant Technology Coordinator
+Science Writer/Technology Marketing Associate
+Educational Technology Coordinator 
+Technology Coordinator
+Technology and Media Services Coordinator
+Election Technology Manager
+Marketing Technology Coordinator
+IT Technology Specialist
+Technology Specialist
+Technology Librarian
+Information Technology Specialist
+Learning Technology Specialist
+Technology Director
+Technology Support Technician
+Benefit Technology Analyst
+Technology Instructor
+
+Cluster 21:
+Chartered accountant 
+Payroll accountant
+Accountant 
+Accountant 1
+assistant accountant
+Revenue Accountant
+Senior Accountant
+Accountant
+Chartered Accountant
+Management accountant
+Staff Accountant
+Senior Accountant
+Staff Accountant
+Tax Accountant
+Staff Accountant/Transition Coordinator
+Junior Accountant
+Staff Accountant
+Staff Accountant
+Staff Accountant
+Staff accountant 
+
+Cluster 22:
+owner
+owner
+Owner
+Owner
+Product Owner
+Product owner
+Owner
+Product Owner E-Commerce
+Technical product owner
+Junior Product Owner
+Product Owner 
+Product Owner
+Product Owner
+Product Owner
+Product Owner
+Product Owner
+Product Owner
+Owner and founder
+Product Owner
+Product Owner
+
+Cluster 23:
+Engineering Coordinator
+Software Engineering Intern
+Engineering Student Trainee
+PhD student (engineering)
+Engineering Intern
+Chief engineering
+Engineering Manager
+Platform engineering manager
+Engineering Manager
+Engineering Associate II
+Engineering Production Analyst
+Engineering Information Technologist
+Engineering forester
+Software engineering manager
+Engineering Manager
+Software Engineering Instructor
+Engineering Consultant
+Engineering Geologist
+Software Engineering Manager
+Engineering Manager
 
 Cluster 24:
-Attorney
-Associate Attorney
-Associate Attorney
-Staff Attorney
-Attorney
-Program Manager & Staff Attorney
-Document Review Attorney 
-Document Review Attorney 
-Staff attorney - nonprofit 
-Staff Attorney III
-Staff attorney
-Legal Aid Staff Attorney
-Staff Attorney 
-Staff Attorney
-Immigration attorney
-Deputy Attorney General
-Associate Attorney
-Attorney
-Assistant District Attorney
-Attorney recruiting coordinator 
+Technical Writer
+Writer
+Freelance Writer/Editor
+self-employed technical writer
+Contributing Writer
+Freelance writer
+Senior Technical Writer
+Medical Writer
+Grant Writer
+Copy Writer
+Staff writer 
+Writer
+Medical Writer
+Bid Writer
+Grant writer 
+Writer
+Freelance Writer
+Technical Writer
+writer/editor
+Content Writer
 
 Cluster 25:
-Executive Director 
-Media executive
-Personal Executive Assistant 
-Executive Director
-Executive Assistant
-Communications Executive
-Executive Assistant
-Executive Assistant 
-Executive Assistant
-Executive Assistant
-Communications Executive
-Research Executive
-Executive PA
-Marketing Executive
-Executive assistant 
-Marketing Executive
-Executive Assistant
-Senior Research Executive
-Executive Assistant
-Sustainability executive
+Registered Nurse
+Nursery Nurse
+Senior nurse
+Licensed Practical Nurse
+Registered Nurse
+Registered Nurse/Clinical Research Coordinator
+registered nurse
+Licensed Practical Nurse
+Registered nurse
+Professional Nurse 1
+Registered Nurse
+Registered nurse
+Clinical Nurse I
+Shift Coordinator/Registered Nurse
+Registered Nurse
+registered nurse
+registered nurse
+Registered nurse
+registered nurse
+Registered nurse
 
 Cluster 26:
+Customer service manager 
+Web Customer Service Rep. 
+Customer Service/Tech Support Agent
+Customer service specialist 2
+Customer Service Advisor
+Customer Service Rep
+Patient and service coordinator 
+Customer Service Associate
+Guest Service Manager
+Member Service Associate
+Customer Service Manager
+Customer Service Team Member
+Customer Service Rep
+Customer Service Representative 
+Customer Service Rep, entry level
+Customer Service Rep
+Customer Service
+Service Delivery Executive
+Customer Service
+Remote Manager/Online Customer Service
+
+Cluster 27:
+Project Manager / Account Manager
+Community Project Manager
+project manager
+Project Manager 
+Project Manager
+Project Manager
+Project Manager
+Project Manager
+Project Manager
+Project Manager 
+Project Officer 
+Project Manager
+Project Manager
+Project Coordinator
+Project manager 
+Assistant Project Manager
+Project Manager
+Project manager
+Senior Project Officer
+Project Leader
+
+Cluster 28:
+Product specialist
+Insurance product manager 
+Assistant Product Manager
+Product Application Support
+Product Manager
+Product Manager
+Product Coordinator
+Product Manager
+Product Coordinator
+Product Specialist 
+Product Manager
+Product reviewer
+Product Manager 
+Product Support Representative
+Senior Product Manager
+Product Development Engineer
+Senior Product Manager
+Product Development Specialist
+Product manager
+Marketing Manager / Senior Product Manager
+
+Cluster 29:
+Customer solutions advisor 
+Customer advisor
+Debt advisor
+Beauty advisor
+Junior Advocacy Advisor
+Sales Advisor
+Financial Advisor
+HR Analyst/Advisor
+Personnel Advisor 
+Resource advisor/officer
+Policy Advisor
+Student Success Center Speciaist-Advisor
+Student Advisor
+Recruitment Advisor
+Service advisor
+HR Advisor
+Member advisor
+Policy Advisor (civil servant) 
+Advisor
+Senior Policy Advisor 
+
+Cluster 30:
+Counsel
+Junior Corporate legal counsel
+Associate Counsel
+Of Counsel
+Deputy Chief Counsel
+Assistant Legal Counsel
+Legal Assistant - Office of General Counsel
+Associate University Counsel
+Legal Counsel
+Govt Counsel
+Counsel
+Associate General Counsel
+General Counsel 
+Senior Counsel
+Assistant Counsel
+Associate Counsel
+Associate Counsel 
+Counsel & Senior Manager of Policy
+Senior Policy Counsel
+Policy Counsel
+
+Cluster 31:
+Technician
+Pharmacy Technician
+Field technician in archaeology
+Laboratory technician 
+Lab Project Technician
+Certified Pharmacy technician
+Senior technician
+IT Support Technician
+Drama Technician 
+Veterinary technician
+Laboratory Technician
+Lab Technician
+Research technician 
+Patient Care Technician
+Pharmacy Technician 
+Ophthalmic Technician
+Library Technician I
+Certified Pharmacy Technician
+Veterinary Technician
+Optometric Technician
+
+Cluster 32:
 Engineering Supervisor
 Teaching practicum supervisor
 Circulation Supervisor
@@ -580,7 +712,6 @@ Box Office Supervisor
 Brand supervisor 
 Student supervisor/graduate assistant 
 Supervisor
-Office Supervisor 
 Accounts Payable Supervisor
 Graphics Supervisor
 Library Associate/Student Supervisor
@@ -589,340 +720,77 @@ Administrative Support Supervisor
 Quality control supervisor 
 Front office supervisor 
 Laboratory supervisor
-Museum Guide - Team Supervisor
 Interlibrary Loan Supervisor
-
-Cluster 27:
-Cloud Consultant
-Senior Developer / Consultant
-Change Management Consultant
-Sr Consultant
-Recruitment consultant
-Recruitment Consultant
-Mortgage Consultant
-Senior Management Consultant
-Tech Consultant
-Beauty Consultant
-IT consultant
-PPC consultant
-Consultant 
-Transport Consultant
-Technical Consultant
-Digital PR Consultant
-Recruitment Consultant
-Consultant
-Leasing Consultant
-Data Product Consultant
-
-Cluster 28:
-Chief Fiscal Officer
-Chief of Staff
-Development Officer
-Administrative Officer
-Records Preparation Officer
-Development Officer
-Finance Officer
-Administrative Officer
-Corporate Development Officer
-Police  Officer
-Statistical Officer
-Prison Officer
-Clerical Officer
-Communications & Fundraising Officer
-Insolvency Officer
-Clerical officer 
-Care home administrative officer
-Insight and Engagement Officer
-Data Officer
-Casino Security Officer
-
-Cluster 29:
-Talent Acquisition Partner
-HR business partner 
-HR & Payroll Business Partner
-Partner
-Organisational and Professional Development Partner
-Loan Partner
-HR Business Partner
-Manager of Partner Network Excellence
-Samples and Partner Relationship Manager
-HR Business Partner 
-HR Business Partner
-HR Business Partner
-HR Business Partner
-Human Resource Business Partner
-Manager, Partner Engagement
-Finance Business Partner
-HR Business Partner
-HR Business Partner
-Research Communication Partner
-Human Resouces Business Partner 
-
-Cluster 30:
-Sales Development Representative 
-Sales Associate
-Senior Director, Sales
-Design and Sales Assistant
-Sales Associate
-Senior Sales Consultant
-Sales support
-Senior Technical Sales Consultant
-Sales Floor/Stocking
-Sales Associate 
-Ecommerce Sales Admin
-Sales Associate 
-Farm hand/sales
-Sales Manager
-Sales Associate 
-Brand Ambassador/Sales Associate
-Sales Associate
-Sales coordinator 
-Accounting Clerk/Sales Coordinator
-Assistant Sales Manager
-
-Cluster 31:
-Project Manager / Account Manager
-Account Manager
-Account executive
-Senior Account Manager
-Account handler 
-Senior Account Executive 
-Assistant Account Manager
-Wholesale Account Rep
-Advertising Account Executive
-Account Executive II
-Account Manager (Display/Social)
-Account Administrator 
-Account Manager
-Media Licensing Account Executive
-Account Payable
-account assistant 
-Digital Account Manager
-Account Manager
-Account manager
-Service Account Manager
-
-Cluster 32:
-Product Marketer
-Product specialist
-Product Manager
-Insurance product manager 
-Assistant Product Manager
-Product Manager
-Product Manager
-Product Coordinator
-Product Manager
-Product Development Artist
-Product Coordinator
-Product Owner
-Product Specialist 
-Product owner
-Product Manager
-Product reviewer
-Digital product manager
-Product Development Associate 
-Digital Product Manager
-Product Manager 
+Assistant Supervisor
+Housekeeping Supervisor
 
 Cluster 33:
-HR Administrator/Generalist
-HR Generalist
-HR Assistant
-Hr systems assistant 
-HR/Payroll Specialist
-HR Coordinator 
-HR Assistant
-HR Adviser
-HR Expert
-HR Generalist
-HR Associate
-HR assistant 
-HR Recruiter
-HR Manager
-HR Coordinator 
-HR Coordinator
-HR Specialist II
-HR Manager
-HR Representative
-HR Generalist
+Senior Director, ESG and Investor Relations
+Client Manager
+Consumer Relations Representative
+Client Services Representative
+Donor relations & Program coordination
+Assistant Media Relations Manager
+Customer Relations Representative 
+Client Relationship Manager 
+Client advocate 
+Client manager
+Client Relations Assistant
+Public Relations Coordinator 
+Client Services Representative
+Corporate & Foundation Relations Manager
+Corporate and Foundation Relations Manager
+Manager of Special Events and Donor Relations
+Client Relations Coordinator
+Registered client services Associate 
+client care representative 
+Media Relations Manager
 
 Cluster 34:
-Academic Librarian
-Music Librarian
-Librarian
-Reference Librarian
-Reference Librarian
-Assistant librarian
-Assistant Librarian
-Librarian
-Assistant librarian
-Librarian
-director/librarian
-Librarian 
-Collections librarian
-Assistant librarian
-Librarian 
-Librarian
-Senior Information Librarian
-Librarian
-Assistant Orchestra Librarian
-Reference Librarian
+Researcher
+PhD student/researcher
+Senior Researcher
+Postdoctoral Researcher 
+Doctoral Researcher
+Senior Researcher
+Researcher
+Scientific Researcher
+Researcher III
+Postdoctoral researcher 
+Researcher
+Researcher 3
+Postdoctoral researcher
+Researcher and Writer
+Prospect Researcher
+Senior researcher
+Content Developer and Researcher
+Health Researcher
+Researcher
+Games user researcher
 
 Cluster 35:
-Assistant Registrar
-Finance Assistant
-Managing Editor
-Online Editor
-Resident's Assistant
-Assistant Editor
-Graduate Assistant
-Special education teaching assistant
-Assistant
-Assistant 
-Graduate Teaching Assistant
-care assistant 
-Recruiting Assistant
-Research assistant
-Undergraduate Research Assistant
-Graduate Research Assistant
-Special Events Assistant 
-PhD student/teaching assistant
-Library assistant
-Catering Assistant
+Narrative Designer
+Textile Designer
+User Experience Designer Apprentice
+RPG Designer
+Visual designer
+Graphic Designer
+Floral designer
+graphic designer
+Senior Designer
+Graphic Designer
+Graphic Designer/Desktop Publisher
+Graphic Designer and Project Coordinator
+Associate Learning Designer
+Graphic Designer
+Assistant Fashion Designer
+Junior Interior Designer
+UX designer
+Theatrical Lighting Designer
+Graphic Designer
+Graphic Designer & Sign Fabrication
 
 Cluster 36:
-Associate
-Technology Associate
-Associate
-Retail Associate
-Retail associate
-Consumer Care Associate
-Member Service Associate
-Associate
-Admin Associate
-Associate Editor
-Housing Associate
-Associate Banker
-Library Associate
-Research Associate 
-Accounts Receivable Associate
-Associate
-Financial associate
-Corporate Finance Associate
-Audit associate
-Universal Associate
-
-Cluster 37:
-Business Administration Assistant 
-Business Intelligence assistant 
-Business manager
-Business analyst
-Business Intelligence Analyst
-Business Analyst
-Business Development Manager
-Business Analyst 
-Business Development Specialist 
-Business Development Manager
-Business sales analyst 
-Business Analyst 
-Business Manager
-New Business
-Business Operations Analyst
-Departmental Business Manager
-Business and Governance Lead
-Business Analyst
-Business Anayst
-Business Development Representative
-
-Cluster 38:
-Rooms Controller
-Principle Project Controller
-Senior Production Controller
-Financial Controller
-Controller
-Production Controller
-Assistant Controller
-Assistant Controller
-Document Controller
-Controller
-Assistant Controller
-Financial controller
-Financial Controller
-Controller 
-Assistant Controller
-Controller
-Controller
-Assistant Controller
-Controller
-Assistant controller
-
-Cluster 39:
-Administrative Assistant
-Administrative coordinator 
-Administrative assistant
-Administrative assistant (part time)
-Administrative Assistant
-Administrative Assistant
-Administrative Assistant
-Administrative assistant 
-Administrative Team Lead
-Administrative assistant 
-Administrative Assistant
-Administrative assistant
-Administrative Assistant 
-Administrative Associate
-Administrative Assistant
-Administrative Assistant 
-administrative assistant
-Administrative Assistant
-Administrative Specialist
-Administrative Assistant II
-
-Cluster 40:
-Operations Manager
-Director of Operations 
-Operations Manager
-Store Operations Assistant
-Operations Intern
-Operations Administrator
-Operations Assistant
-Operations Management Graduate
-[radio] Operations Assistant
-Operations & Events Coordinator
-Operations Manager
-Operations Assistant
-Director of Operations
-Operations Manager
-Operations Manager
-Operations Program Associate
-Admissions Operations Assistant
-Manager of Facility Management Operations
-Estates Operations Manager
-Technical Operations Manager
-
-Cluster 41:
-Social Media & Communications Assistant
-Social media producer
-Social worker
-Worker
-Social media & content executive
-Social Media and Website Editor
-Social worker
-Social Media & Community Manager
-Social media producer
-Social Media Manager
-Social media strategist 
-Social media strategist 
-Social Media Manager
-Social media specialist
-Social Media Coordinator
-School Social Worker
-Teller/customer service/social media 
-Inpatient Unit Social Worker
-Social Media Manager
-Social Media Specialist
-
-Cluster 42:
 Operations supervisor/human resources 
 Human resources assistant
 Administrative and Human Resources Assistant
@@ -935,7 +803,6 @@ Human Resources Assistant
 Human Resources 
 Human Resources Coordinator
 Human Resources 
-Human Resources 
 Human Resources Assistant
 Human Resources Representative
 Human Resources Assistant
@@ -943,157 +810,290 @@ Human Resources / Payroll
 Human Resources Manager
 Human resource manager 
 Human Resources Manager
+Human Resources Generalist
+
+Cluster 37:
+Program director
+Volunteer and Partnerships Program Manager
+After School Program Leader
+Program Director
+Program Manager
+Program coordinator 
+Program Assistant
+Communications & Program Administration Manager
+Program Specialist
+Senior Program Manager
+Program Assistant
+Program Coordinator
+Program manager
+Conservation program assistant 
+Program Coordinator
+Program Director 
+program coordinator
+Program Manager
+Program Coordinator
+Program Leader
+
+Cluster 38:
+Managing Editor
+Production editor 
+Online Editor
+Assistant Editor
+Editor 
+Assistant Script Editor
+Assistant Editor
+Editor
+Associate Editor
+Senior Editor
+Content editor
+English Editor
+Editor
+Acquisitions editor
+Partnerships editor
+Music Editor
+Senior sub-editor
+Senior Content Editor
+Editor
+Editor and producer / Project manager
+
+Cluster 39:
+Territory Manager
+accreditation manager
+Account Manager
+Store Manager 
+Regional Manager
+CRM manager 
+Manager
+General manager
+Property Manager
+Clinical Evaluation Manager
+Proposal manager
+Restaurant manager
+Manager of Customer Support 
+Talent Development Manager
+supply chain manager
+Team manager 
+Administration Manager 
+Visitor Services Assistant Manager
+Duty Manager
+Export manager
+
+Cluster 40:
+HR Administrator/Generalist
+Health Administrator
+Administrator
+Small Business Administrator 
+Apprentice business administrator 
+Administrator
+Administrator
+Research Grants Administrator
+SLT Administrator 
+Operations Administrator
+Administrator
+Administrator
+Administrator
+Administrator 
+Programme Administrator
+Learning and Teaching Administrator
+Programme Administrator
+Lead Administrator
+Senior Administrator 
+investment administrator
+
+Cluster 41:
+Cloud Consultant
+Senior Developer / Consultant
+Change Management Consultant
+Sr Consultant
+Recruitment consultant
+Recruitment Consultant
+Senior Sales Consultant
+Mortgage Consultant
+Senior Management Consultant
+Tech Consultant
+Beauty Consultant
+IT consultant
+Consultant 
+Transport Consultant
+Recruitment Consultant
+Consultant
+Leasing Consultant
+Data Product Consultant
+Tech Consultant
+Business Consultant
+
+Cluster 42:
+Associate
+patient services associate
+Associate
+Sales Associate
+Retail associate
+Patron Services Associate
+Consumer Care Associate
+University services associate
+Sales Associate 
+Associate
+Sales Associate 
+Youth Services Associate
+Admin Associate
+Administrative Associate
+Associate Banker
+Sales Associate
+Accounts Receivable Associate
+Associate
+Audit associate
+Universal Associate
 
 Cluster 43:
-Technical Writer
-Technical Writer
-writer
-Writer
-Freelance Writer/Editor
-Grant Writer
-self-employed technical writer
-Contributing Writer
-Freelance writer
-Senior Technical Writer
-Senior Content Writer 
-Science Writer/Technology Marketing Associate
-Medical Writer
-Grant Writer
-Copy Writer
-Admin Asst/Tech Writer
-Lead ad writer
-Content Writer/Copywriter
-Staff writer 
-Writer
+Digital Media Coordinator
+Digital Marketing Assistant
+Digital marketing Manager 
+digital marketing executive 
+Digital Marketing Assistant
+Digital pr the executive 
+Junior Digital Marketing Manager
+Digital PR & Content Executive
+Senior digital forensic practitioner
+Digital PR Consultant
+Digital Content Editor
+Digital Personal Shopper
+Senior Digital Marketing Executive 
+Digital Marketing Manager
+Digital Skills Developer 
+Digital communication officer
+Digital Account Manager
+Digital Engagement Specialist
+Digital Media and Communications Officer
+Digital Library Cataloger
 
 Cluster 44:
-Registered Nurse
-Nursery Nurse
-Senior nurse
-Licensed Practical Nurse
-Registered Nurse
-Registered nurse
-Registered nurse 
-Registered Nurse/Clinical Research Coordinator
-registered nurse
-Licensed Practical Nurse
-Registered nurse
-Professional Nurse 1
-Registered Nurse
-Registered Nurse
-Registered nurse
-Clinical Nurse I
-Shift Coordinator/Registered Nurse
-Registered Nurse
-registered nurse
-registered nurse
+Chief of Staff
+Bar Staff
+Patron Services Staff
+Deli Counter Staff
+RN
+RN
+Senior Staff
+Staff Therapist
+Office staff position
+Staff Assistant III
+Medical Staff Representative
+Chief of Staff
+Tax staff
+RN
+Staff Psychotherapist 
+Staff Geologist
+Staff Director
+Staff Assistant
+RN Engineer 
+RN
 
 Cluster 45:
-Instructional coach 
-Coordinator of Instructional Technology
-ABA instructional tutor
-Instructional Aide
-Instructional Assistant
-Instructional Designer
-Instructional Assistant
-Instructional Designer
-Instructional Technologist
-Instructional Technologist
-Global Director, Learning & Instructional Design
-Instructional design librarian
-Instructional Designer
-Instructional Developer
-Instructional Coach
-Instructional designer
-Instructional Designer
-Instructional Designer 
-Senior Learning Consultant and Instructional Designer  
-Instructional Designer
+Copywriter
+Senior Copywriter
+Copywriter
+copywriter and editor
+Copywriter
+Copywriter
+Copywriter + Content Creator
+Copywriter
+Copywriter
+Copywriter
+Copywriter/Proofreader
+Copywriter
+Copywriter
+Copywriter
+Copywriter
+Senior Copywriter
+Copywriter
+Fundraising Copywriter
+Content Manager & Copywriter
+Copywriter
 
 Cluster 46:
-Compliance & Risk Officer
-Quality And Compliance Specialist
-Public health compliance officer 
-Commercial Compliance Manager
-Compliance Officer
-Compliance Analyst
-HR Compliance Coordinator/Admin Assistant
-Vendor compliance specialist 
-environmental compliance specialist 
-Learning and Compliance Consultant
-Regulatory Compliance Specialist
-Compliance analyst
-DOT Compliance Coordinator
-Compliance Assistant
-Compliance
-Environmental Compliance 
-Compliance Coordinator
-Compliance Manager
-Compliance Programmer
-Compliance Specialist
+Paralegal
+Paralegal
+Paralegal
+Paralegal
+Paralegal (Intern)
+Paralegal
+Paralegal
+Certified Paralegal
+Paralegal
+Paralegal
+Paralegal
+Legal Secretary/Paralegal
+Paralegal
+Paralegal
+Paralegal
+Paralegal / Legal Secretary
+Paralegal
+Paralegal
+Paralegal
+Paralegal
 
 Cluster 47:
-Head of Business Support 
-Senior Support Engineer
-Software Engineer Technical Support
-Pupil Support Assistant
-Manager of Customer Support 
-Administration and Logistics Support Assistant
-Support Worker
-Admin Support
-Business support assistant
-Radiation Protection Support Scientist 
-Information Support Officer
-Parenting support worker
-Educational Support Professional 
-Admin support
-Technical Support Specialist I
-IT Support Technician
-Specialist Support Worker
-Client Support Manager
-Systems admin - support
-Business Management Support
+Data Manager 
+Chief Data Scientist
+Senior Data Scientist
+Chief Data Scientist
+Data scientist
+Senior Data Analyst
+Data curation
+Data Analyst
+Data Scientist
+Data Analyst
+Data analyst
+Spatial Data Analyst
+Data Officer
+Data Scientist
+Data Analyst 
+Data mechanic
+Junior Data Scientist
+Junior Data Scientist
+Data Analyst
+Data Analyst
 
 Cluster 48:
-Auditor
-Quality Assurance Auditor
-Compliance Auditor
-Assistant auditor
-Assistant Auditor
-Night auditor
-Night auditor
-Sales Auditor
-Night Auditor
-Internal Auditor 
-Senior Accountant/Auditor
-Lead Auditor
-Records Coordinator/Auditor
-Auditor
-Internal Auditor 
-Quality Assurance Auditor
-Internal Auditor
-Revenue auditor
-Provider Network Auditor
-Senior Auditor
+Frontend Engineer
+Senior Softwaare Engineer (Web)
+Front End Engineer 
+Frontend Engineer
+Systems Engineer 
+Engineer
+Audio Visual Engineer
+Linux DevOps Engineer
+Audio engineer
+Production engineer
+Electrical Engineer 
+Audio/Video Engineer
+It support engineer
+Graduate Civil Engineer
+Graduate Chemical Engineer
+Quality Engineer
+Engineer
+Development engineer
+Quality Engineer
+Process Engineer
 
 Cluster 49:
-Chartered accountant 
-Payroll accountant
-Accountant 
-Accountant 1
-Accountant
-assistant accountant
-Revenue Accountant
-Senior Accountant
-Accountant
-Chartered Accountant
-Management accountant
-accountant
-Staff Accountant
-Senior Accountant
-Staff Accountant
-Tax Accountant
-Staff Accountant/Transition Coordinator
-Junior Accountant
-Staff Accountant
-Revenue Accountant 
+Office Associate
+Office Manager 
+Assistent Front Office Manager
+Office administrator 
+Box office & Admin manager
+Office Manager
+Office Manager
+Office Manager 
+Front Office Assistant
+Front and Back Office Manager
+Office Associate Senior
+Office Manager 
+Office Coordinator
+Office Assistant
+Office Assistant
+Office manager
+PA to CEO/Office Manager
+Remote Office Assistant
+Office Manager
+Office Operations Associate

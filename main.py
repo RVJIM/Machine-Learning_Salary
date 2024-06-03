@@ -1,14 +1,14 @@
 import pandas as pd
 import numpy as np
-import time, math
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import StandardScaler, OrdinalEncoder, OneHotEncoder
-from sklearn.model_selection import train_test_split
+import time, warnings, os
 from sklearn.linear_model import Ridge, Lasso, LinearRegression
-from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.tree import DecisionTreeRegressor, plot_tree
-
+from sklearn.preprocessing import MinMaxScaler, PolynomialFeatures, OrdinalEncoder
+from sklearn.model_selection import train_test_split
+from xgboost import XGBRegressor, to_graphviz
+from sklearn.model_selection import cross_val_score
 
 table = pd.read_excel("Ask A Manager Salary Survey 2021 (Responses).xlsx")
 df = pd.DataFrame(table)
@@ -145,6 +145,7 @@ df.drop(df[df['Currency'].isin(elements_to_delete)].index, inplace=True)
 df.loc[(df['Country'] == 'Australia') & (df['Currency'] == 'AUD/NZD'), 'Currency'] = 'AUD'
 df.loc[(df['Country'] == 'New Zealand') & (df['Currency'] == 'AUD/NZD'), 'Currency'] = 'NZD'
 
+
 # Sum of columns Salary and Additional
 df['Additional'].fillna(0, inplace=True) # otherwise, it creates a lot of blanks, because additional has them
 df['Salary'] = df['Salary'] + df['Additional']
@@ -182,80 +183,194 @@ df['Job Title'] = df['Job Title'].str.strip().str.upper()
 total_values_job = df['Job Title'].value_counts()
 df['Job Title'] = np.where(df['Job Title'].isin(total_values_job[total_values_job < threshold].index), 'OTHERS', df['Job Title'])
 
+import seaborn as sns
+import matplotlib.pyplot as plt
 
-df.to_excel('clean.xlsx')
+'''sns.set_style("whitegrid")
 
-# Standardize salary and make it the split
+numerical_cols = df.select_dtypes(include=['number']).columns
+categorical_cols = df.select_dtypes(include=['object', 'category']).columns
+
+# numerical columns
+for col in numerical_cols:
+    if col != 'Unnamed: 0':
+        plt.figure(figsize=(8, 6))
+        ax = df[col].hist(color='skyblue', edgecolor='black', bins=20)
+        plt.title(f'Histogram of {col}', fontsize=16)
+        plt.xlabel(col, fontsize=14)
+        plt.ylabel('Frequency', fontsize=14)
+        plt.xticks(fontsize=12)
+        plt.yticks(fontsize=12)
+        
+        for p in ax.patches:
+            ax.annotate(f"{int(p.get_height())}", (p.get_x() + p.get_width() / 2., p.get_height()), ha='center', va='bottom', fontsize=10, color='black', xytext=(0, 5), textcoords='offset points')
+
+        plt.tight_layout()
+        plt.show()
+
+# categorical columns
+for col in categorical_cols:
+    plt.figure(figsize=(10, 6))
+    if col == 'Country':  # show only top-10
+        top_countries = df[col].value_counts().nlargest(10)
+        top_countries.plot(kind='bar', color='lightcoral')
+    elif col == 'Race':  # show only top-10
+        top_race_answers = df[col].value_counts().nlargest(10)
+        top_race_answers.plot(kind='bar', color='lightcoral')
+    else:
+        df[col].value_counts().plot(kind='bar', color='lightcoral')
+    
+    plt.title(f'Distribution of {col}', fontsize=16)
+    plt.xlabel(col, fontsize=14)
+    plt.ylabel('Frequency', fontsize=14)
+    plt.xticks(rotation=45, ha='right', fontsize=12)
+    plt.yticks(fontsize=12)
+    
+    if col != 'Country' and col != 'Race':  
+        for i, v in enumerate(df[col].value_counts()):
+            plt.text(i, v + 0.2, str(v), ha='center', va='bottom', fontsize=10, color='black')
+    
+    plt.tight_layout()
+    plt.show()
+
+# statistics for numerical
+numerical_stats = df[numerical_cols].describe()
+print("Numerical Statistics:")
+print(numerical_stats)
+
+# statistics for categorical
+for col in categorical_cols:
+    print(f"\nValue counts for {col}:")
+    if col == 'Country':  
+        print(df[col].value_counts().nlargest(10))
+    elif col == 'Race':  
+        print(df[col].value_counts().nlargest(10))
+    else:
+        print(df[col].value_counts())'''
+
+print(df.dtypes)
+#df.to_excel('clean.xlsx')
+
 X = df.drop(['Salary'], axis=1)
-df["Standard_sal"] = StandardScaler().fit_transform(df[['Salary']])
+df["Standard_sal"] = MinMaxScaler().fit_transform(df[['Salary']])
 y = df['Standard_sal']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.8, random_state=123)
-y.to_excel('Salary_standardize.xlsx')
+enc = OrdinalEncoder()
+X_transformed = enc.fit_transform(X)
 
-# Preprocessing of all columns
-preprocessing_country = ColumnTransformer(
-    transformers=[
-        ('ord', OrdinalEncoder(), ['Years job', 'Age', 'Highest Education']),
-        ('encoder', OneHotEncoder(handle_unknown='ignore'), ['Country', 'Industry', 'Job Title', 'Race'])
-    ]
-)
+scaler = MinMaxScaler()
+X_standardized = scaler.fit_transform(X_transformed)
 
-X_train_transformed = preprocessing_country.fit_transform(X_train)
-X_test_transformed = preprocessing_country.transform(X_test)
+# Transform out polynomial features until 5 degrees
+number_degrees = [1,2,3]
+poly_x_values = []
+for degree in number_degrees:
+    poly_model = PolynomialFeatures(degree=degree)
+    poly_x_values.append(poly_model.fit_transform(X_transformed))
+
+# Split them in test and train
+X_trains, X_tests, y_trains, y_tests = [], [], [], []
+for x in poly_x_values:
+    X_train, X_test, y_train, y_test = train_test_split(x, y, train_size=0.8, random_state=5)
+    X_trains.append(X_train)
+    X_tests.append(X_test)
+    y_trains.append(y_train)
+    y_tests.append(y_test)
+
+for x, y in zip(X_trains, y_trains):
+    print(x.shape, y.shape)
 
 
-# Function of models
-def models(X_train, X_test, y_train, y_test, name_decision_tree):
+
+warnings.filterwarnings('ignore')
+
+
+
+def models(X_train, X_test, Y_train, Y_test, name_decision_tree, k=5):
+    df_models = pd.DataFrame()
+    df_models_val = pd.DataFrame()
+    
     models = {
-        'Linear Regression': LinearRegression(),
-        'Ridge': Ridge(),
-        'Lasso': Lasso(),
-        'RandomForestRegressor': RandomForestRegressor(),
-        'DecisionTreeRegressor': DecisionTreeRegressor(),
-        'GradientBoostingRegressor' : GradientBoostingRegressor()
-    }
-
-    columns = ['Model', 'Run Time (minutes)', 'MSE', 'MAE', 'R2']
-    df_models = pd.DataFrame(columns=columns)
-
+            'Linear Regression': LinearRegression(),
+            'Ridge': Ridge(),
+            #'Lasso': Lasso(),
+            #'RandomForestRegressor': RandomForestRegressor(),
+            #'DecisionTreeRegressor': DecisionTreeRegressor(),
+            #'XGBoost' : XGBRegressor(tree_method='hist')
+        }
+    
     for model_name, model in models.items():
-        start_time = time.time()
+        print(model_name)
+        for x_train, x_test, y_train, y_test, degree in zip(X_train, X_test, Y_train, Y_test, number_degrees):
+            poly_model = PolynomialFeatures(degree=degree)
+            print(degree)
+            poly_model.fit(x_train, y_train)
+
+            start_time = time.time()
         
-        model.fit(X_train, y_train)
-        y_train_pred = model.predict(X_train)
-        #y_test_pred = model.predict(X_test)
+            model.fit(x_train, y_train)
+            y_train_pred = model.predict(x_train)
+            #y_test_pred = model.predict(X_test)
 
-        train_mse = math.sqrt(mean_squared_error(y_train, y_train_pred))
-        #test_mse = mean_squared_error(y_test, y_test_pred)
+            train_mse = mean_squared_error(y_train, y_train_pred, squared=False)
+            #test_mse = mean_squared_error(y_test, y_test_pred)
 
-        train_mae = mean_absolute_error(y_train, y_train_pred)
-        #test_mae = mean_absolute_error(y_test, y_test_pred)
-
-        r_squared_train = r2_score(y_train, y_train_pred)
-        #r_squared_test = r2_score(y_test, y_test_pred)
-
-        row = {'Model': model_name,
-           'Run Time (minutes)': round((time.time() - start_time) / 60, 6),
-           'MAE': train_mae,
-           'MSE': train_mse,
-           'R2': r_squared_train
-           }
-
-        df_models = pd.concat([df_models, pd.DataFrame([row])], ignore_index=True)
-       
-        if model_name == 'DecisionTreeRegressor':
-            a = plot_tree(model, filled=True, feature_names=X_train.columns if hasattr(X_train, 'columns') else None, rounded=True, max_depth=1)
-            #plt.savefig("decision_tree.png") 
-            #plt.show() 
-
-    return a, df_models
+            r_squared_train = r2_score(y_train, y_train_pred)
+            #r_squared_test = r2_score(y_test, y_test_pred)
+        
+            row = {'Model': model_name,
+                'Run Time (minutes)': round((time.time() - start_time) / 60, 6),
+                'MSE': train_mse,
+                'R2': r_squared_train
+            }
+        
+            df_models = pd.concat([df_models, pd.DataFrame([row])], ignore_index=True)
 
 
-ax, df_models_main = models(X_train_transformed, X_test_transformed, y_train, y_test, 'Main')
+            start_time = time.time()
 
+            # Perform cross-validation
+            cv_scores_mse = -cross_val_score(model, x_train, y_train, cv=k, scoring='neg_mean_squared_error')
+            cv_scores_r2 = cross_val_score(model, x_train, y_train, cv=k, scoring='r2')
 
-# Divide the code in categories on the salary
+            row_val = {'Model': model_name,
+                'Run Time (minutes)': round((time.time() - start_time) / 60, 6),
+                'Cross-Validated MSE': np.mean(cv_scores_mse),
+                'Cross-Validated R2': np.mean(cv_scores_r2)
+            }
+        
+            df_models_val = pd.concat([df_models_val, pd.DataFrame([row_val])], ignore_index=True)
+        
+            if model_name == 'DecisionTreeRegressor':
+                plt.figure(figsize=(20, 10))
+                plot_tree(model, filled=True, feature_names=X_train.columns if hasattr(X_train, 'columns') else None, rounded=True, max_depth=3)
+                os.makedirs('DecisioneTree', exist_ok=True)
+                plt.savefig(os.path.join('DecisioneTree', f'{name_decision_tree}.png'))
+                plt.close()
+
+            elif model_name == 'XGBoost':
+                graph_data = to_graphviz(model, num_trees=2, rankdir='LR')
+                graph_data.render(filename=os.path.join('XGBoost', f'{name_decision_tree}'), format='png', cleanup=True)
+
+            plt.scatter(degree, df_models.loc[degree-1, 'MSE'], color='blue')
+            plt.scatter(degree, df_models.loc[degree-1, 'R2'], color='gray')
+            
+        plt.plot(number_degrees, df_models[df_models['Model'] == model_name]['MSE'], color='red', label='MSE')
+        plt.plot(number_degrees, df_models[df_models['Model'] == model_name]['R2'], color='green', label='R2')
+        plt.xticks(range(1,len(number_degrees)+1))       
+        plt.grid(visible=None)
+        plt.legend()
+        plt.xlabel('Degree')
+        plt.ylabel('Values of Metrics')
+        plt.title(f'{name_decision_tree} - {model_name}')
+        os.makedirs('Accuracy', exist_ok=True)
+        plt.savefig(os.path.join('Accuracy', f'{name_decision_tree} - {model_name}.png'))
+        plt.close()
+        
+    return df_models, df_models_val
+
+df_models_main, df_models_val_main = models(X_trains, X_tests, y_trains, y_tests, 'Main')
+
 high_sal = ['Luxembourg', 'Ireland', 'Singapore', 'Qatar', 'United Arab Emirates', 'Switzerland', 'USA', 'Norway', 'Denmark', 'The Netherlands', 'Iceland']
 mid_sal = ['Saudi Arabia', 'Austria', 'Sweden', 'Belgium', 'Germany', 'Australia', 'Finland', 'Canada', 'France', 'South Korea', 'UK', 'Italy', 'Israel', 'Japan',
             'New Zealand', 'Slovenia', 'Kuwait', 'Spain']
@@ -268,55 +383,92 @@ def categories(x):
     elif x in low_sal: return 'Low'
     else: return 'Poverty'
 
-df['Category'] = df['Country'].apply(categories)
-print(df['Category'].value_counts())
+df_category = pd.DataFrame()
+df_category = df.copy()
+df_category['Category'] = df_category['Country'].apply(categories)
+df_category['Category'].value_counts()
 
-# Preprocessing on the DataFrame with categories
-X = df.drop(['Salary'], axis=1)
+X_cat = df_category.drop(['Standard_sal', 'Salary'], axis=1)
+y = df['Standard_sal']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.8, random_state=123)
+X_transformed_cat = enc.fit_transform(X_cat)
+
+# Transform out polynomial features until 5 degrees
+poly_x_values_cat = []
+for degree in number_degrees:
+    poly_model = PolynomialFeatures(degree=degree)
+    poly_x_values_cat.append(poly_model.fit_transform(X_transformed_cat))
+
+# Split them in test and train
+X_trains_cat, X_tests_cat, y_trains_cat, y_tests_cat = [], [], [], []
+for x in poly_x_values_cat:
+    X_train_cat, X_test_cat, y_train_cat, y_test_cat = train_test_split(x, y, train_size=0.8, random_state=5)    
+    X_trains_cat.append(X_train_cat)
+    X_tests_cat.append(X_test_cat)
+    y_trains_cat.append(y_train_cat)
+    y_tests_cat.append(y_test_cat)
+
+
+
+# Without Job Title
+'''X = df.drop(['Salary', 'Job Title'], axis=1)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.8, random_state=5)
 
 preprocessing = ColumnTransformer(
     transformers=[
         ('ord', OrdinalEncoder(), ['Years job', 'Age', 'Highest Education']),
-        ('encoder', OneHotEncoder(handle_unknown='ignore'), ['Category', 'Industry', 'Job Title', 'Race'])
+        ('encoder', OneHotEncoder(handle_unknown='ignore'), ['Category', 'Industry', 'Race'])
     ]
 )
 
 X_train_transformed = preprocessing.fit_transform(X_train)
 X_test_transformed = preprocessing.transform(X_test)
+'''
 
-b, df_models_transformed = models(X_train_transformed, X_test_transformed, y_train, y_test, 'Category')
+df_models_transformed, df_models_transformed_val = models(X_trains_cat, X_trains_cat, y_trains, y_tests, 'Category')
 
-# Function to analyse each category
-def analysis_categories(df, category: str):
+print(df_models_transformed)
+
+def analysis_categories(df, category):
     df_category = df[df['Category'] == category]
     X = df_category.drop(['Salary'], axis=1)
     y = df_category['Standard_sal']
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.8, random_state=5)
-    X_train_transformed = preprocessing_country.fit_transform(X_train)
-    X_test_transformed = preprocessing_country.transform(X_test)
+    X_transformed = enc.fit_transform(X)
+    
+    # Transform out polynomial features until 5 degrees
+    poly_x_values = []
+    for degree in number_degrees:
+        poly_model = PolynomialFeatures(degree=degree)
+        poly_x_values.append(poly_model.fit_transform(X_transformed))
 
-    plot, df_models = models(X_train_transformed, X_test_transformed, y_train, y_test, category)
+    # Split them in test and train
+    X_trains, X_tests, y_trains, y_tests = [], [], [], []
+    for x in poly_x_values:
+        X_train, X_test, y_train, y_test = train_test_split(x, y, train_size=0.8, random_state=5)    
+        X_trains.append(X_train)
+        X_tests.append(X_test)
+        y_trains.append(y_train)
+        y_tests.append(y_test)
+    
+    df_models, df_models_val = models(X_trains, X_tests, y_trains, y_tests, category)
+    
+    return df_models, df_models_val
 
-    return plot, df_models
-
-# Function to compare between subsets
 def compare_subsets(df, categories):
     all_results = []
-    plots = []
+
     for category in categories:
         print(f"Analyzing category: {category}")
-        plot, results = analysis_categories(df, category)
+        results = analysis_categories(df, category)
         all_results.append(results)
-        plots.append(plot)
     
     df_results = pd.concat(all_results, ignore_index=True)
-    return plots, df_results
+    return df_results
 
-categories = df['Category'].unique()
-plots, df_results = compare_subsets(df, categories)
 
-print(plots)
+categories = df_category['Category'].unique()
+df_results = compare_subsets(df_category, categories)
+
 print(df_results.drop(columns='Run Time (minutes)'))
